@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -55,19 +60,34 @@
     </nav>
 
     <main role="main" class="container">
+
+
+      <?php
+
+
+if(isset($_SESSION['usuario']))
+{
 $archivo=fopen("usuarios.txt", "r");
 while(!feof($archivo))
 {
   $renglon = fgets($archivo);
-  echo $renglon."<br>";
+  //echo $renglon."<br>";
+  echo "<a href='#' class='list-group-item'>$renglon</a>";
+}
+}else
+{
+    echo "<a href='login.html' class='list-group-item'>Usted no tiene permisos, debe ingresar con usuario y password</a>";
 }
 
+
+
+?>
    
-<div class="list-group">
+<!--div class="list-group">
   <a href="#" class="list-group-item">First item</a>
   <a href="#" class="list-group-item">Second item</a>
   <a href="#" class="list-group-item">Third item</a>
-</div>
+</div-->
     </main><!-- /.container -->
 
     <!-- Bootstrap core JavaScript
