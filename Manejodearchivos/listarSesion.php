@@ -52,9 +52,14 @@ session_start();
             </div>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form action="deslogear.php" class="form-inline my-2 my-lg-0">
+          <input name ="usuario" readonly class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" value="<?php
+
+
+      echo $_SESSION['usuario'];
+?>">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name ="Perfil" >Perfil</button>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name ="Salir">Salir</button>
         </form>
       </div>
     </nav>
